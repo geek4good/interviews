@@ -23,5 +23,22 @@ describe TestResult do
 
   describe "#to_hash" do
     # => { "01_unit_tests" => "success", "02_functional_tests" => "success", "03_integration_tests" => "failure" }
+    it "returns the test result as a hash" do
+      expect(test_result.to_hash).to eq({
+        "01_unit_tests" => "success",
+        "02_functional_tests" => "success",
+        "03_integration_tests" => "failure"
+      })
+    end
+  end
+
+  describe "#filenames" do
+    it "returns the test result file names" do
+      expect(test_result.filenames).to eq(%W(
+        timestamp/01_unit_tests.txt
+        timestamp/02_functional_tests.txt
+        timestamp/03_integration_tests.txt
+      ))
+    end
   end
 end
