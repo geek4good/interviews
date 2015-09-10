@@ -4,7 +4,7 @@ describe ArrayChallenge do
   subject(:challenge) { described_class.new(arrays) }
 
   describe "#captilize_last_letter" do
-    let(:arrays) { %w(ant bee cow) }
+    let(:arrays) { [%w(ant bee cow)] }
 
     it "capitalizes the last letter of each word in the collection" do
       result = challenge.capitalize_last_letter
