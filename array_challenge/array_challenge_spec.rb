@@ -19,7 +19,7 @@ describe ArrayChallenge do
     it "returns the chars that only exists in either of the arrays" do
       result = challenge.chars_unique_to_either_collection
 
-      expect(result).to eq(%w(n c l f o x r))
+      expect(result).to eq(%w(c f l n o r x))
     end
   end
 end
