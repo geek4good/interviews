@@ -10,9 +10,9 @@ class ArrayChallenge
   end
 
   def chars_unique_to_either_collection
-    a = arrays.first.join.chars
-    b = arrays.last.join.chars
+    union = arrays.map(&:join).flat_map(&:chars)
+    intersection = arrays.map(&:join).map(&:chars).reduce(:&)
 
-    ((a + b) - (a & b)).sort
+    (union - intersection).sort
   end
 end
